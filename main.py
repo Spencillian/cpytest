@@ -1,5 +1,6 @@
 import cytest
 import time
+import mixcypy
 
 
 def primes(n):
@@ -22,3 +23,11 @@ cyprimes = cytest.primes(10000000)
 time_cy = time.perf_counter() - start_cy
 
 print(f"Cython: {time_cy} seconds")
+
+
+start_mix = time.perf_counter()
+mixprimes = mixcypy.primes(10000000)
+time_mix = time.perf_counter() - start_mix
+
+
+print(f"Mixcypy: {time_mix} seconds")
